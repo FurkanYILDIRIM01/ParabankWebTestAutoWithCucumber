@@ -9,8 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static Base.ElementParams.registerCSS;
-import static Base.ElementParams.registerFirstName;
+import static Base.ElementParams.*;
 
 
 public class HomePage extends BaseLib {
@@ -67,6 +66,18 @@ public class HomePage extends BaseLib {
         webDriver.findElement(By.id(elementParams.paramsRead(fieldName))).sendKeys(text);
         return this;
     }
+
+    @Then("Successful register text check")
+    public HomePage successfulRegisterTextCheck(){
+        webDriver.findElement(By.cssSelector(registerSuccessfulText)).getText();
+        return this;
+    }
+    @Then("Successful login text check")
+    public HomePage successfulLoginTextCheck(){
+        webDriver.findElement(By.cssSelector(loginSuccessfulText)).getText();
+        return this;
+    }
+
 
 /* @When("{String} Text is entered in the field: {string}")
     public HomePage idFillElements(String fieldName, String text){

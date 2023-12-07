@@ -3,6 +3,7 @@ package Base;
 import Pages.HomePage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -48,6 +49,7 @@ public class BaseTest extends BaseLib{
         driver.get("https://parabank.parasoft.com");
         HomePage.setDriver(driver);
     }
+    @Then("Browser Close")
     @AfterMethod
     public void after(){
         driver.quit();
